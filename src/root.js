@@ -1,6 +1,9 @@
 import { combineEpics } from 'redux-observable';
 import { combineReducers } from 'redux';
-import { users, fetchUserEpic } from './users';
+import 'rxjs';
+
+import { fetchUserEpic } from './users/userEpic';
+import { users } from './users/userReducers';
 
 export const rootEpic = combineEpics(
     fetchUserEpic
